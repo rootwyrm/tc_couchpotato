@@ -89,14 +89,14 @@ config_checkdir()
 config_copybase()
 {
 	## Only has one config file
-	export basecfg="/config/config.ini"
+	export basecfg="/config/settings.conf"
 	if [[ $(test -f $basecfg) -eq 0 ]]; then
 		## Back it up.
 		echo "[NOTICE] Backing up your existing $basecfg"
 		cp $basecfg "$basecfg".bak
 	fi
 
-	cp /opt/talecaster/defaults/config.ini $basecfg
+	cp /opt/talecaster/defaults/settings.conf $basecfg
 	if [ $? -ne 0 ]; then
 		RC=$?
 		return $rc
